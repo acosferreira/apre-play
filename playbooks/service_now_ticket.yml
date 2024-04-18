@@ -1,0 +1,56 @@
+---
+- name: Implement closed loop automation with Ansible and ServiceNow
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  vars:
+    job_template_id_failed: 
+    violations:
+    SN_HOST:   '{{ lookup("env", "SN_HOST") }}'
+    SN_USERNAME: '{{ lookup("env","SN_USERNAME") }}'
+    SN_PASSWORD: '{{ lookup("env", "SN_PASSWORD") }}'
+    JOB_TEMPLATE_URL: 
+  tasks:
+    - name: Create ServiceNow Change Request
+      servicenow.itsm.change_request:
+        instance:
+          host: "{{ SN_HOST }}"
+          username: "{{ SN_USERNAME }}"
+          password:  "{{ SN_PASSWORD }}"
+        type: normal
+        priority: high
+        risk: moderate
+        other:
+          approval: requested
+        state: assess
+        assignment_group: "CAB Approval"
+        short_description: "Job Template Id: {{job_template_id_failed }} Policy Rules Validation Failed"
+        description: |
+          Job Template Failed Policy Rules Validation: {{ JOB_TEMPLATE_URL }}/{{job_template_id_failed }}
+          Violations:
+            {% for violation in violations %} {{ violation['policy_name'] }}: 
+              {% for target in violation['targets'] %} [{{ target['lines']['begin'] }}, {{ target['lines']['end'] }}] {{ target['message'] }} 
+            {% endfor %} {% endfor %}
+          Force run job url: {{ run_policy_failed_job_url | default('') }}
+      register: new_change_request
+
+    - name: Print out Change Request number
+      ansible.builtin.debug:
+        msg: 
+          - "The newly created change request is {{ new_change_request.record.number }}."
+          - "Vistit: {{ SN_HOST }}/nav_to.do?uri=change_request.do?sys_id={{new_change_request.record.sys_id}}"
+          - "Awaiting approval from Change Advisory Board."
+    - name: Print out Policy Rules Violations
+      ansible.builtin.debug:
+        msg: "{{ violations }}"
+    - name: Job extra_vars
+      ansible.builtin.debug:
+        msg: "{{ job_extra_vars | default({}) }}"
+    - name: Run with extra_vars to skip evaluation and run the job
+      ansible.builtin.debug:
+        msg: "{{ skip_evaluation_extra_vars | default({}) }}"
+    - name: Force launch job url
+      ansible.builtin.debug:
+        msg: "{{ run_policy_failed_job_url | default('') }}"
+   

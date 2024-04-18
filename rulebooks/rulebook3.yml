@@ -1,0 +1,15 @@
+---
+- name: kafka policy validation
+  hosts: all
+  sources:
+    - ansible.eda.kafka:
+        host: ec2-3-145-7-141.us-east-2.compute.amazonaws.com
+        port: 9092
+        topic: "test-eda-2"
+  rules:
+    - name: event is defined
+      condition: event.body is defined
+      action:
+        run_job_template:
+          name: "local playbook 3"
+          organization: Default

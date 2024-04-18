@@ -1,0 +1,21 @@
+---
+- name: When job template fails evaluation
+  hosts: localhost
+  gather_facts: false
+  vars:
+  tasks:
+    - name: Job template id
+      ansible.builtin.debug:
+        msg: "{{ job_template_id_failed }}"
+    - name: Policy Rules violations
+      ansible.builtin.debug:
+        msg: "{{ violations }}"
+    - name: Job extra_vars
+      ansible.builtin.debug:
+        msg: "{{ job_extra_vars | default({}) }}"
+    - name: Run with extra_vars to skip evaluation and run the job
+      ansible.builtin.debug:
+        msg: "{{ skip_evaluation_extra_vars | default({}) }}"
+    - name: Force launch job url
+      ansible.builtin.debug:
+        msg: "{{ run_policy_failed_job_url | default('') }}"

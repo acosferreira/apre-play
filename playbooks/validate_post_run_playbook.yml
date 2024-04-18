@@ -1,0 +1,19 @@
+---
+- name: Validate and post run job
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Debug event info about validation
+      ansible.builtin.debug:
+        msg: "job : 'id: {{ job_id }}, name: {{ job_name }}, name: {{ job_status }}'"
+    - name: Validate and run job_template
+      ansible.builtin.uri:
+        url: "http://{{ apr_host }}/validate-post-run"
+        method: POST
+        body_format: json
+        status_code:
+          - 201
+        body:
+          job_id: "{{ job_id }}"
+          job_name: "{{ job_name }}"
+          job_status: "{{ job_status }}"

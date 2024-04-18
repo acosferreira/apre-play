@@ -1,0 +1,24 @@
+---
+- name: Start an instance with a public IP address
+  hosts: localhost
+  gather_facts: false
+  vars:
+    ec2_name: "your_instance_name"
+    region: "your_aws_region"
+    instance_type: "t2.micro"
+    ami_id: "your_ami_id"
+    key_name: "your_key_name"
+    security_group: "your_security_group_id"
+    vpc_subnet_id: "your_vpc_subnet_id"
+  tasks:
+    - name: Create EC2 instance
+      amazon.aws.ec2_instance:
+        name: "{{ ec2_name }}"
+        region: "{{ region }}"
+        key_name: "{{ key_name }}"
+        vpc_subnet_id: "{{ vpc_subnet_id }}"
+        instance_type: "{{ instance_type }}"
+        security_group: "{{ security_group }}"
+        network:
+          assign_public_ip: true
+        image_id: "{{ ami_id }}"
