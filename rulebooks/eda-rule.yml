@@ -1,14 +1,17 @@
 ---
 - name: EDA
-  hosts: localhost
+  hosts: all
   sources:
     - ansible.eda.kafka:
-        host: ec2-3-142-189-167.us-east-2.compute.amazonaws.com
+        host: ec2-3-148-115-231.us-east-2.compute.amazonaws.com
         port: 9092
-        topic: "eda-playground"
+        topic: "apre-demo"
   rules:
     - name: event is defined
       condition: event.body is defined
       action:
-        run_playbook:
-          name: "provision_aws_ec2_playbook.yml"
+        run_job_template:
+          name: "Start an instance"
+          organization: Default
+
+
