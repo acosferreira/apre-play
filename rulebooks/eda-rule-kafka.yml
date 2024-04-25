@@ -11,7 +11,7 @@
       condition: event.body is defined
       action:
         run_job_template:
-          name: "{{ job_template_name }}"
+          name: "Start an instance"
           organization: Default
 
 
