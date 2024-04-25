@@ -1,0 +1,17 @@
+---
+- name: EDA
+  hosts: all
+  sources:
+    - ansible.eda.kafka:
+        host: kafka
+        port: 9092
+        topic: "apre-demo"
+  rules:
+    - name: event is defined
+      condition: event.body is defined
+      action:
+        run_job_template:
+          name: "Start an instance"
+          organization: Default
+
+
