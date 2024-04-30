@@ -13,5 +13,6 @@
         run_job_template:
           name: "{{ job_template_name }}"
           organization: Default
-
+          job_args:
+            extra_vars: "{{ event.body }}"
 
