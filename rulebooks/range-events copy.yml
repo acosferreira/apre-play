@@ -12,6 +12,9 @@
       action:
         debug:
           msg: "Event {{ event.i }} fired"
+    - name: 20 events per min
+      condition: event.i is defined
+      action:  
         run_job_template:
           name: "Demo Job Template"
           organization: Default  
