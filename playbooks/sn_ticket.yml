@@ -5,7 +5,7 @@
   gather_facts: false
   
   vars:
-    SN_PASSWORD: '{{ SN_PASSWORD }}'
+    PWD: '{{ SN_PASSWORD }}'
     JOB_TEMPLATE_URL: 
   tasks:
     - name: Create ServiceNow Change Request
@@ -13,7 +13,7 @@
         instance:
           host: "https://dev281294.service-now.com/"
           username: "admin"
-          password:  "{{ SN_PASSWORD }}"
+          password:  "{{ PWD }}"
         type: normal
         priority: high
         risk: moderate
