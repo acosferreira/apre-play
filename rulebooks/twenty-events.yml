@@ -4,9 +4,9 @@
   sources:
     - ansible.eda.generic:
         create_index: i
-        loop_count: 20
+        # loop_count: 20
         event_delay: 120
-        loop_delay: 0.5
+        # loop_delay: 0.5
         payload:
           - name: '20events'
 
@@ -18,61 +18,42 @@
         run_job_template:
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
+          name: "ServiceNow"
+          organization: Default
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
+          name: "ServiceNow"
+          organization: Default
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
+          name: "ServiceNow"
+          organization: Default
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
+          name: "ServiceNow"
+          organization: Default
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
+          name: "ServiceNow"
+          organization: Default
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
+          name: "ServiceNow"
+          organization: Default
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
+          name: "ServiceNow"
+          organization: Default
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
+          name: "ServiceNow"
+          organization: Default
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
+          name: "ServiceNow"
+          organization: Default
           name: "Demo Job Template"
           organization: Default
-        run_job_template:
-          name: "Demo Job Template"
+          name: "ServiceNow"
           organization: Default
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-        
+          
