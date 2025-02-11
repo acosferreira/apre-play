@@ -1,0 +1,29 @@
+---
+- name: ServiceNow
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  
+  vars:
+    SN_PASSWORD: '{{ lookup("env", "SN_PASSWORD") }}'
+    JOB_TEMPLATE_URL: 
+  tasks:
+    - name: Create ServiceNow Change Request
+      servicenow.itsm.change_request:
+        instance:
+          host: "https://dev281294.service-now.com/"
+          username: "admin"
+          password:  "{{ SN_PASSWORD }}"
+        type: normal
+        priority: high
+        risk: moderate
+        other:
+          approval: requested
+        state: assess
+        assignment_group: "CAB Approval"
+        short_description: "ServiceNow"
+        description: |
+          Ana's test serviceNow
+      register: new_change_request
+
+   
