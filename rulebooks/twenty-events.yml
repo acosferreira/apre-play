@@ -4,17 +4,13 @@
   sources:
     - ansible.eda.generic:
         create_index: i
-        # loop_count: 20
-        limit: 120
-        # loop_delay: 0.5
         payload:
           - name: '20events'
 
   rules:
     - name: Two minutes of events rule
       condition: event.name == '20events'
-
-      action:
+      actions:
         run_job_template:
           name: "Demo Job Template"
           organization: Default
