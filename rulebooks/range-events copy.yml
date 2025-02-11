@@ -1,0 +1,16 @@
+---
+- name: "20events per min"
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 1000
+        delay: 0.5
+      
+  rules:
+    - name: 20 events per min
+      condition: event.i is defined
+
+      action:
+        run_job_template:
+          name: "Demo Job Template"
+          organization: Default
