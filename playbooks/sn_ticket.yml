@@ -8,6 +8,9 @@
     PWD: '{{ SN_PASSWORD }}'
     JOB_TEMPLATE_URL: 
   tasks:
+    - name: Debug extra var
+      debug:
+        msg: "Pwd is {{ PWD }}"
     - name: Create ServiceNow Change Request
       servicenow.itsm.change_request:
         instance:
@@ -25,5 +28,7 @@
         description: |
           Ana's test serviceNow
       register: new_change_request
-
+    - name: Debug result
+      debug:
+        msg: "request is {{ new_change_request }}"
    
