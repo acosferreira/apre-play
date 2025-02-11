@@ -5,7 +5,7 @@
     - ansible.eda.range:
         limit: 10
         batch_count: 5
-        delay: 0
+        delay: 1
   rules:
   - name: Trigger job template
     condition: event.i is defined
@@ -13,6 +13,3 @@
       run_job_template:
         name: "Demo Job Template"
         organization: Default  
-        job_args:
-          extra_vars:
-            event_id: "{{ event.i }}"
