@@ -1,0 +1,20 @@
+---
+- name: "20events per min"
+  hosts: all
+  sources:
+    - ansible.eda.generic:
+        create_index: i
+        loop_count: 20
+          event_delay: 120
+          loop_delay: 1
+        payload:
+          - name: 20events
+
+  rules:
+    - name: Two minutes of events rule
+      condition: event.name == 20events
+
+      action:
+        run_job_template:
+          name: "Demo Job Template"
+          organization: Default
