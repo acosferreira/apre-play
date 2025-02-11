@@ -7,11 +7,11 @@
         batch_count: 5
         delay: 1
   rules:
-    - name: 20 events per min
-      condition: event.i is defined
-      action:
-        debug:
-          msg: "Event {{ event.i }} fired"
+    # - name: 20 events per min
+    #   condition: event.i is defined
+    #   action:
+    #     debug:
+    #       msg: "Event {{ event.i }} fired"
     - name: 20 events per min
       condition: event.i is defined
       action:  
