@@ -4,7 +4,7 @@
   sources:
     - ansible.eda.generic:
         payload:
-        events: "{{ range(1,21) | list }}"
+          events: "{{ range(1,21) | list }}"
   rules:
   - name: Trigger job template
     condition: event.i is defined
