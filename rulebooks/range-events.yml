@@ -9,6 +9,9 @@
   - name: Trigger job template
     condition: event.i is defined
     action:  
-      run_job_template:
+      ansible.eda.controller_job_template:
         name: "Demo Job Template"
         organization: Default  
+        job_args:
+          extra_vars:
+            event_id: "{{ event.i }}"
