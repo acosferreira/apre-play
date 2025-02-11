@@ -4,7 +4,7 @@
   sources:
     - ansible.eda.range:
         limit: 1000
-        delay: 0.5
+        delay: 0.05
       
   rules:
     - name: 20 events per min
