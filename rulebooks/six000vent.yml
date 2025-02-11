@@ -1,0 +1,14 @@
+- name: "6000 event rules"
+  hosts: all
+  sources:
+    - ansible.eda.generic:
+        loop_count: 6000
+        create_index: index
+        payload:
+          - sec: true
+  rules:
+    - name: One million events rule
+      condition: event.sec
+      action:
+        debug:
+          msg: "Event {{ event.index }} triggered"
