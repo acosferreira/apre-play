@@ -11,45 +11,64 @@
     - name: Two minutes of events rule
       condition: event.name == '20events'
       actions:
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          name: "Demo Job Template"
-          organization: Default
-          name: "ServiceNow"
-          organization: Default
-          
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+        - run_job_template:
+            name: "Demo Job Template"
+            organization: Default
+        - run_job_template:
+            name: "ServiceNow"
+            organization: Default
+                            
