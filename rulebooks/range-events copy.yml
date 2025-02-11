@@ -12,3 +12,6 @@
       action:
         debug:
           msg: "Event {{ event.i }} fired"
+        run_job_template:
+          name: "Demo Job Template"
+          organization: Default  
