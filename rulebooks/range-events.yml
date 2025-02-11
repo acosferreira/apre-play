@@ -3,9 +3,9 @@
   hosts: all
   sources:
     - ansible.eda.range:
-        start: 1
-        end: 21
-        delay: 0
+        limit: 10
+        batch_count: 5
+        delay: 1
   rules:
   - name: Trigger job template
     condition: event.i is defined
