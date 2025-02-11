@@ -1,5 +1,4 @@
 ---
----
 - name: "Two minutes of events"
   hosts: all
   sources:
