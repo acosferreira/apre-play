@@ -5,7 +5,7 @@
     - ansible.eda.generic:
         create_index: i
         # loop_count: 20
-        event_delay: 120
+        limit: 120
         # loop_delay: 0.5
         payload:
           - name: '20events'
