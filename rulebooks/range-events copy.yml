@@ -3,7 +3,7 @@
   hosts: all
   sources:
     - ansible.eda.range:
-        limit: 1000
+        limit: 100
         delay: 0.05
       
   rules:
