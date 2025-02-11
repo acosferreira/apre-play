@@ -1,0 +1,14 @@
+---
+- name: "Fire 20 events per sec"
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 10
+        batch_count: 5
+        delay: 1
+  rules:
+    - name: 20 events per min
+      condition: event.i is defined
+      action:
+        debug:
+          msg: "Event {{ event.i }} fired"
