@@ -5,7 +5,7 @@
     - ansible.eda.range:
         limit: 10
         batch_count: 20
-      
+        delay: 1
   rules:
     - name: 20 events per min
       condition: event.i is defined
