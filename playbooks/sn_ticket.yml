@@ -5,7 +5,7 @@
   gather_facts: false
   
   vars:
-    SN_PASSWORD: '{{ lookup("env", "SN_PASSWORD") }}'
+    SN_PASSWORD: '{{ SN_PASSWORD }}'
     JOB_TEMPLATE_URL: 
   tasks:
     - name: Create ServiceNow Change Request
