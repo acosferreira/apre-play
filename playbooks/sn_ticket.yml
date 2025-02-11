@@ -14,7 +14,7 @@
     - name: Create ServiceNow Change Request
       servicenow.itsm.change_request:
         instance:
-          host: "dev281294"
+          host: "https://dev281294.service-now.com/"
           username: "admin"
           password:  "{{ PWD }}"
         type: normal
