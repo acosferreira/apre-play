@@ -5,10 +5,10 @@
     - ansible.eda.generic:
         payload:
         events: "{{ range(1,21) | list }}"
-    rules:
-    - name: Trigger job template
-      condition: event.i is defined
-      action:  
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default  
+  rules:
+  - name: Trigger job template
+    condition: event.i is defined
+    action:  
+      run_job_template:
+        name: "Demo Job Template"
+        organization: Default  
