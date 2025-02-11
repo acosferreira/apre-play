@@ -8,11 +8,11 @@
         event_delay: 120
         loop_delay: 1
         payload:
-          - name: 20events
+          - name: '20events'
 
   rules:
     - name: Two minutes of events rule
-      condition: event.name == 20events
+      condition: event.name == '20events'
 
       action:
         run_job_template:
