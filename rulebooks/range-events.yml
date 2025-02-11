@@ -2,14 +2,15 @@
 - name: "Fire 20 jobs per sec"
   hosts: all
   sources:
-    - ansible.eda.generic:
-        payload:
-          events: "{{ range(1,21) | list }}"
+    - ansible.eda.range:
+        start: 1
+        end: 21
+        delay: 0
   rules:
   - name: Trigger job template
     condition: event.i is defined
     action:  
-      ansible.eda.controller_job_template:
+      run_job_template:
         name: "Demo Job Template"
         organization: Default  
         job_args:
