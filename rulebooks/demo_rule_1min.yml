@@ -1,5 +1,5 @@
 ---
-- name: "One minute of events"
+- name: "Execute Demo Job per 1 min"
   hosts: all
   sources:
     - ansible.eda.range:

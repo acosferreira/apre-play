@@ -1,5 +1,5 @@
 ---
-- name: "Two minutes of events"
+- name: "Create SN ticket for 2 min"
   hosts: all
   sources:
     - ansible.eda.range:
