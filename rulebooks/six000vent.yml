@@ -3,12 +3,9 @@
   sources:
     - ansible.eda.generic:
         loop_count: 6000
-        create_index: index
-        payload:
-          - sec: true
   rules:
     - name: One million events rule
       condition: event.payload is defined
       action:
         debug:
-          msg: "Event {{ event.index }} triggered"
+          msg: "Event {{ event.payload }} triggered"
