@@ -11,7 +11,7 @@
       condition: event.payload is defined
       action:
         debug:
-          msg: "Event {{ event.i }} fired"
+          msg: "Event {{ event.payload }} fired"
     # - name: 20 events per min
     #   condition: event.i is defined
     #   action:  

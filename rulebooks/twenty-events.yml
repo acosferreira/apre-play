@@ -9,7 +9,7 @@
 
   rules:
     - name: Two minutes of events rule
-      condition: event.name == '20events'
+      condition: event.payload is defined
       actions:
         - run_job_template:
             name: "Demo Job Template"
