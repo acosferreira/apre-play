@@ -8,7 +8,7 @@
         delay: 1
   rules:
     - name: 20 events per min
-      condition: event.i is defined
+      condition: event.payload is defined
       action:
         debug:
           msg: "Event {{ event.i }} fired"

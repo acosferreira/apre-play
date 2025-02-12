@@ -8,7 +8,7 @@
           - sec: true
   rules:
     - name: One million events rule
-      condition: event.sec
+      condition: event is defined
       action:
         debug:
           msg: "Event {{ event.index }} triggered"
