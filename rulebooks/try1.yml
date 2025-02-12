@@ -1,16 +1,18 @@
 ---
-- name: "One minute of events"
+# Basic rulebook with job template, 
+- name: Github event
   hosts: all
   sources:
-    - ansible.eda.range:
-        limit: 60
-        delay: 1  # 60 seconds
+    - ansible.eda.webhook:
+        port: 5000
   rules:
-    - name: One minute of events rule
-      condition: >-
-        event.i in [
-          0, 10, 20, 30, 40, 50, 59
-        ]
-      action:
-        debug:
-          msg: "Event {{ event.i }} triggered"
+    - name: Run job template when the event is defined
+      condition: event is defined
+      actions:
+        - run_job_template:
+          name: "Demo Job Template"
+          organization: Default
+        - debug:
+            msg: "Basic short rulebook, event {{ event }}"
+
+  execution_strategy: "parallel"
