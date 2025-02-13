@@ -4,8 +4,8 @@ name: every Min for 1h
 
 # Controls when the workflow will run
 on:
-  schedule:
-    - cron: '* 14 * * *'
+  #schedule:
+    #- cron: '* 14 * * *'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
