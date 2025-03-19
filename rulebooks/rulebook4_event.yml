@@ -1,5 +1,5 @@
 ---
-- name: "Execute Demo Job per 1 min"
+- name: "Rule4"
   hosts: all
   sources:
     - ansible.eda.range:
@@ -12,6 +12,5 @@
           0, 10, 20, 30, 40, 50, 59
         ]
       action:
-        run_job_template:
-          name: "Demo Job Template"
-          organization: Default
+        debug:
+          msg: "Event {{ event.i }} triggered"

@@ -1,5 +1,5 @@
 ---
-- name: "One minute of events"
+- name: "Rule9"
   hosts: all
   sources:
     - ansible.eda.range:
