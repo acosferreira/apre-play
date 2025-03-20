@@ -7,9 +7,9 @@
         batch_count: 5
         delay: 1
   rules:
-    - name: event is defined
-      condition: event.body is defined
+    - name: Rule 13 Job event
+      condition: event.payload.name == "rule13"
       action:
         run_job_template:
-          name: "run_basic"
+          name: "Job13"
           organization: Default

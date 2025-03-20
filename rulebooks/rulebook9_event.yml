@@ -6,11 +6,8 @@
         limit: 60
         delay: 1  # 60 seconds
   rules:
-    - name: One minute of events rule
-      condition: >-
-        event.i in [
-          0, 10, 20, 30, 40, 50, 59
-        ]
+    - name: Rule 9 debug event
+      condition: event.payload is defined
       action:
         debug:
-          msg: "Event {{ event.i }} triggered"
+          msg: "Event rule 9{{ event.payload }} triggered"

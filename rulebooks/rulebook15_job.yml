@@ -6,11 +6,8 @@
         limit: 60
         delay: 1  # 60 seconds
   rules:
-    - name: One minute of events rule
-      condition: >-
-        event.i in [
-          0, 10, 20, 30, 40, 50, 59
-        ]
+    - name: Rule 15 Job event
+      condition: event.payload.name == "rule15"
       action:
         run_job_template:
-          name: "Demo Job Template"
+          name: "Job15"

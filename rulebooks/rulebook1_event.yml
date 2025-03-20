@@ -11,4 +11,4 @@
       condition: event.payload is defined
       action:
         debug:
-          msg: "Event {{ event.payload }} fired"
+          msg: "Event rule 1{{ event.payload }} fired"

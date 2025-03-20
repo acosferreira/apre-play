@@ -7,8 +7,8 @@
         batch_count: 5
         delay: 1
   rules:
-    - name: Rule1 debug event
+    - name: Rule 6 debug event
       condition: event.payload is defined
       action:
         debug:
-          msg: "Event {{ event.payload }} fired"
+          msg: "Event rule 6 {{ event.payload }} fired"

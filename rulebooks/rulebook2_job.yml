@@ -8,7 +8,7 @@
         delay: 1
   rules:
     - name: event is defined run job template
-      condition: event.payload is defined
+      condition: event.payload.name == "rule2"
       action:
         run_job_template:
           name: "Job2"
