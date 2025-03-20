@@ -8,8 +8,8 @@
         delay: 1
   rules:
     - name: event is defined run job template
-      condition: event.body is defined
+      condition: event.payload is defined
       action:
         run_job_template:
-          name: "Demo Job Template"
+          name: "Job2"
           organization: Default

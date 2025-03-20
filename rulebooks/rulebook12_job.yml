@@ -11,5 +11,5 @@
       condition: event.body is defined
       action:
         run_job_template:
-          name: "Demo Job Template"
+          name: "run_basic"
           organization: Default
