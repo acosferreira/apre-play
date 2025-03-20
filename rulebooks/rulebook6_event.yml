@@ -1,5 +1,5 @@
 ---
-- name: "Rule1"
+- name: "Rule6"
   hosts: all
   sources:
     - ansible.eda.range:
