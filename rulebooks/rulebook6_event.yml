@@ -8,7 +8,7 @@
         delay: 1
   rules:
     - name: Rule 6 debug event
-      condition: event.payload is defined
+      condition: event.payload.name == "rule6"
       action:
         debug:
           msg: "Event rule 6 {{ event.payload }} fired"

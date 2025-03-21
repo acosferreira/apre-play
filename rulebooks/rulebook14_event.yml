@@ -7,7 +7,7 @@
         delay: 1  # 60 seconds
   rules:
     - name: Rule 14 debug event
-      condition: event.payload is defined
+      condition: event.payload.name == "rule14"
       action:
         debug:
           msg: "Event rule 14{{ event.payload}} triggered"

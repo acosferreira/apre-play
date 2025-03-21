@@ -11,3 +11,5 @@
       action:
         run_job_template:
           name: "Job10"
+          organization: Default
+
