@@ -1,0 +1,24 @@
+---
+- name: "Rule2"
+  hosts: all
+  sources:
+    - ansible.eda.range:
+        limit: 10
+        batch_count: 5
+        delay: 1
+  rules:
+    - name: event is defined run job template
+      condition: event.payload.name == "ruleExtra4"
+      actions:
+        run_job_template:
+          name: "Job4"
+          organization: Default
+        run_job_template:
+          name: "Job6"
+          organization: Default
+        run_job_template:
+          name: "Job9"
+          organization: Default
+        run_job_template:
+          name: "Job14"
+          organization: Default
