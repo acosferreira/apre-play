@@ -9,17 +9,16 @@
   rules:
     - name: event is defined run job template
       condition: event.payload.name == "ruleExtra4"
-      action:
-        list:
-          - run_job_template:
-              name: "Job4"
-              organization: Default
-          - run_job_template:
-              name: "Job6"
-              organization: Default
-          - run_job_template:
-              name: "Job9"
-              organization: Default
-          - run_job_template:
-              name: "Job14"
-              organization: Default
+      actions:
+        - run_job_template:
+            name: "Job4"
+            organization: Default
+        - run_job_template:
+            name: "Job6"
+            organization: Default
+        - run_job_template:
+            name: "Job9"
+            organization: Default
+        - run_job_template:
+            name: "Job14"
+            organization: Default
