@@ -1,0 +1,14 @@
+---
+- name: get request
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: get redhat
+      uri:
+        url: http://www.google.com
+        method: GET
+        return_content: true
+      register: google_response
+    - name: print httpStatus
+      debug:
+        msg: "Status {{ google_response.status }} "
